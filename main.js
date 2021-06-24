@@ -1,11 +1,12 @@
 import {createServer} from 'http'
 import url from 'url'
+import {template_home} from './source/template.js'
 
 createServer((req,res)=> {
     const parsedUrl = url.parse(req.url)
     console.log(parsedUrl)
     if (req.url === '/') {
-        res.write('<h1>Movie Container Node</h1>')
+        res.write(template_home)
         res.end()
         return
     }
