@@ -1,5 +1,8 @@
 import http from 'http';
 import fs from 'fs';
+import os from 'os'
+
+
 
 
 http.createServer((req,res) => {
@@ -7,6 +10,7 @@ http.createServer((req,res) => {
         if (err) {
             throw err;
         }
+        
         res.end(data) // 읽은 html 파일 버퍼를 있는 그대로 클라이언트에게 전송
     })
     
